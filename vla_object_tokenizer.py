@@ -1,5 +1,6 @@
 # this is object aware tokenizer for vla
 
+import os
 import torch
 import cv2
 import numpy as np
@@ -7,6 +8,11 @@ from PIL import Image
 from ultralytics import YOLO
 from transformers import CLIPProcessor, CLIPModel, AutoTokenizer
 import open_clip
+
+os.environ['YOLO_CACHE_DIR'] = 'E:/yolo_cache'
+os.environ['HF_HOME'] = 'E:/huggingface_cache'
+os.environ['TORCH_HOME'] = 'E:/torch_cache'
+
 
 class ObjectVLATokenizer:
     def __init__(self):
