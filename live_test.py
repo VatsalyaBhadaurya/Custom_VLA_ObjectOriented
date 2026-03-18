@@ -1,4 +1,4 @@
-# 
+# this is test script to test whole pipeline, yolo -> object tokenizer -> language command -> action output
 
 import torch
 import cv2

@@ -1,4 +1,5 @@
-# LOW-MEM OBJECT VLA TOKENIZER - NO OpenCLIP (50MB total)
+# this is vla object tokenizer
+ 
 import os
 import torch
 import cv2

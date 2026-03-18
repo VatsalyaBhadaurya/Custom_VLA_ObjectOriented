@@ -1,0 +1,41 @@
+# configs/so100.yaml
+# Default training config for SO100 arm (Tomas0413/so100_screw_lid_v0 dataset)
+# Override any field via CLI:  --epochs 200 --lr 5e-5 etc.
+
+arm_name: so100
+repo_id: Tomas0413/so100_screw_lid_v0
+
+data_dir:   ./data/so100_screw_lid_v0
+cache_dir:  ./cache/so100_frames
+output_dir: ./runs/vla_so100
+
+# Architecture
+d_vis: 256
+d_lang: 128
+d_state: 128
+d_model: 256
+n_experts: 4
+top_k: 2
+chunk_size: 16
+vision_backbone: dinov2   # "dinov2" | "resnet18"
+share_proj: true
+
+# Training
+epochs: 100
+batch_size: 16
+lr: 1.0e-4
+weight_decay: 1.0e-4
+grad_clip: 1.0
+val_frac: 0.10
+
+# Loss weights
+w_action: 1.0
+w_moe: 0.01
+w_rl: 0.1       # set to 0.0 to disable RL safety penalty
+
+# Misc
+num_workers: 2
+seed: 42
+save_every: 10
+log_every: 25
+img_size: 224
